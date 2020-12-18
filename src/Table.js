@@ -1,6 +1,6 @@
 import React from 'react';
 import './Table.css';
-import { Card, CardContent, Typography } from '@material-ui/core'
+import numeral from 'numeral';
 
 function Table({ countries }) {
     return (
@@ -9,7 +9,7 @@ function Table({ countries }) {
                 <tr>
                     <td>{country}</td>
                     <td>
-                        <strong>{cases}</strong>
+                        <strong>{numeral(cases).format("0.0a")}</strong>
                     </td>
                 </tr>
             ))}
